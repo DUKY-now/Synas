@@ -11,26 +11,19 @@
 
 <body>
 
-<header>
-<nav>
-<h2>Synas WL</h2>
-<ul>
-<li><a href="index.html">Accueil</a></li>
-<li><a href="reglement.html">Règlement</a></li>
-<li><a href="streamers.html">Streamers</a></li>
-<li><a href="whitelist.html">Whitelist</a></li>
-<li><a href="equipe.html">Équipe</a></li>
-<li><a href="entreprise.html">Entreprise</a></li>
-</ul>
-</nav>
-</header>
+<header data-include="components/navbar.html"></header>
+<script src="js/include.js"></script>
 
-<section class="hero">
+<section class="btn-retour">
 <h1>Retourner au choix de règlement</h1>
+<br> <br>
+<ul><a href="reglement.html" class="btn">choix du règlement</a></ul>
 </section>
 
 <section class="hero">
-<p><strong>Conditions d’éligibilité</strong></p>
+    <h2>Règlement streamer</h2>
+    <br>
+    <p class="titre"><strong>Conditions d’éligibilité</strong></p>
 <p>Pour être reconnu comme streamer officiel sur Synas, il est obligatoire d’avoir fait un ticket au préalable.</p>
 <p>Les annonces de live dans les salons Discord prévus à cet effet sont uniquement autorisées si le live est lancé sur le serveur Synas.</p>
 <p>Règles générales à respecter</p>
@@ -45,7 +38,7 @@
 <p>Le streamer doit mute son stream et gérer la situation calmement hors live.</p>
 <p>Le staff de Synas peut être sollicité uniquement en cas de besoin réel, pour aider à reprendre la diffusion dans de bonnes conditions.</p>
 <br>
-<p><strong>En résumé</strong></p>
+<p class="titre"><strong>En résumé</strong></p>
 <p>Les règles s’appliquent à tous les streamers ou joueurs, quel que soit leur statut.</p>
 <p>Tout manquement peut entraîner un avertissement, un retrait du droit de stream ou des sanctions serveur.</p>
 <p>Dernier rappel</p>
@@ -55,13 +48,7 @@
 
 
 
-<footer>
-    <div class="socials">
-        <a href="https://www.tiktok.com/@synas_wl?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer">Tiktok</a> |
-        <!-- <a href="#https://github.com/DUKY-now">GitHub</a> -->
-    </div>
-    <p>© 2026 Synas</p>
-</footer>
+<footer data-include="components/footer.html"></footer>
 
 </body>
 </html>

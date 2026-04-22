@@ -23,6 +23,16 @@ justify-content: space-between;
 align-items: center;
 }
 
+.brand {
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.brand h2 {
+margin: 0;
+}
+
 nav ul {
 display: flex;
 list-style: none;
@@ -40,7 +50,24 @@ width: 50px;
 }
 
 .hero {
-height: 100vh;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+    color: #7b00ff !important;
+    text-shadow: 0 0 10px #7b00ff;
+}
+
+
+.btn-retour {
+height: 50vh;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -50,22 +77,12 @@ background: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)), url('../assets/imag
 background-size: cover;
 }
 
-.hero h1 {
-font-size: 60px;
-margin-bottom: 20px;
-}
-
 .titre {
 font-size: 30px;
 margin-bottom: 20px;
+box-align: center;
+color: #b163c4;
 }
-
-.cards {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-
 
 .cards {
     display: flex;
@@ -103,12 +120,25 @@ iframe {
 
 .btn {
 padding: 15px 30px;
-background: #ff0000;
+background: #b163c4;
 color: white;
 border-radius: 5px;
 text-decoration: none;
 margin-top: 20px;
+display: inline-block;
 }
+
+.formulaire {
+display: inline-flex;
+
+}
+
+/* #couleur-streamer {
+    color: #7b00ff !important;
+    text-shadow: none !important;
+    filter: none !important;
+} */
+
 
 footer {
 text-align: center;
