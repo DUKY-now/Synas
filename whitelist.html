@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whitelist</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+<nav>
+<h2>FLASHWL</h2>
+<ul>
+<li><a href="index.html">Accueil</a></li>
+<li><a href="reglement.html">Règlement</a></li>
+<li><a href="streamers.html">Streamers</a></li>
+<li><a href="whitelist.html">Whitelist</a></li>
+<li><a href="equipe.html">Équipe</a></li>
+<li><a href="sasp.html">SASP</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Whitelist</h1>
+<p>Rejoignez le serveur</p>
+
+
+<form id="whitelistForm">
+
+<input type="text" name="nom" placeholder="Nom RP" required>
+
+<input type="number" name="age" placeholder="Age" required>
+
+<textarea name="histoire" placeholder="Histoire RP"></textarea>
+
+<button type="submit">Envoyer</button>
+
+</form>
+<script>
+
+document.getElementById("whitelistForm").addEventListener("submit", async function(e){
+
+e.preventDefault();
+
+const formData = new FormData(this);
+
+const data = {
+nom: formData.get("nom"),
+age: formData.get("age"),
+histoire: formData.get("histoire")
+};
+
+await fetch("https://https://script.google.com/macros/library/d/11QJ_PtlKzHRVYKMC50i-CKuuzYsRHS3EAJPMCYaEHix0Q1rBXXReNPu3/2", {
+method: "POST",
+headers: {
+"Content-Type": "application/json"
+},
+body: JSON.stringify(data)
+});
+
+alert("Envoyé !");
+
+});
+
+</script>
+
+</section>
+
+</body>
+</html>
