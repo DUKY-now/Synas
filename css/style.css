@@ -35,6 +35,10 @@ text-decoration: none;
 font-weight: bold;
 }
 
+.logo {
+width: 50px;
+}
+
 .hero {
 height: 100vh;
 display: flex;
@@ -49,6 +53,52 @@ background-size: cover;
 .hero h1 {
 font-size: 60px;
 margin-bottom: 20px;
+}
+
+.titre {
+font-size: 30px;
+margin-bottom: 20px;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+
+.cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.cards img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+    border-radius: 8px;
+    display: block;
+}
+.card {
+    width: 250px;
+     overflow: hidden; /* empêche toute image de dépasser */
+    border: 1px solid #b163c4;
+    border-radius: 10px;
+    background: rgba(20, 20, 20, 0.9);
+    box-shadow: 0 0 10px #b163c4;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+
+iframe {
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
 }
 
 .btn {
