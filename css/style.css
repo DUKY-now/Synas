@@ -338,3 +338,15 @@ footer {
   background: rgba(196, 125, 212, 0.15);
   color: var(--color-primary);
 }
+
+.sector {
+  display: flex;
+  flex-wrap: wrap;          /* 👈 autorise retour à la ligne */
+  gap: 20px;
+  justify-content: center;  /* centre les cards */
+  margin-bottom: 60px;
+  padding: 20px;
+
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+}
