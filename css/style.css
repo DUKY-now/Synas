@@ -43,10 +43,65 @@ nav a {
 color: white;
 text-decoration: none;
 font-weight: bold;
+transition: color 0.3s;
+}
+
+nav a:hover {
+color: #b163c4;
 }
 
 .logo {
 width: 50px;
+}
+
+/* Dropdown menu */
+.dropdown {
+position: relative;
+}
+
+.dropdown-toggle {
+cursor: pointer;
+user-select: none;
+}
+
+.dropdown-menu {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+background: rgba(0, 0, 0, 0.95);
+list-style: none;
+padding: 10px 0;
+min-width: 180px;
+border-radius: 5px;
+margin-top: 10px;
+border: 1px solid #b163c4;
+box-shadow: 0 0 15px rgba(177, 99, 196, 0.3);
+z-index: 1000;
+}
+
+.dropdown-menu li {
+padding: 0;
+}
+
+.dropdown-menu li a {
+display: block;
+padding: 12px 20px;
+color: white;
+text-decoration: none;
+font-weight: bold;
+transition: all 0.3s;
+border-left: 3px solid transparent;
+}
+
+.dropdown-menu li a:hover {
+background: rgba(177, 99, 196, 0.2);
+border-left-color: #b163c4;
+color: #b163c4;
+}
+
+.dropdown.active .dropdown-menu {
+display: block;
 }
 
 .hero {
@@ -144,4 +199,68 @@ footer {
 text-align: center;
 padding: 20px;
 background: black;
+}
+
+/* Styles pour les pages de règlement (reg_legal, reg_illegal) */
+.hero {
+padding-top: 100px;
+max-width: 900px;
+margin: 0 auto;
+text-align: left;
+height: auto;
+min-height: 50vh;
+}
+
+.hero h1 {
+text-align: center;
+font-size: 50px;
+margin-bottom: 30px;
+color: #7b00ff;
+text-shadow: 0 0 10px #7b00ff;
+}
+
+.hero h2 {
+font-size: 28px;
+color: #b163c4;
+margin-top: 30px;
+margin-bottom: 15px;
+padding-bottom: 10px;
+border-bottom: 2px solid #b163c4;
+}
+
+.hero h3 {
+font-size: 20px;
+color: #b163c4;
+margin-top: 20px;
+margin-bottom: 10px;
+}
+
+.hero strong {
+color: #7b00ff;
+}
+
+.hero p {
+font-size: 16px;
+line-height: 1.8;
+margin-bottom: 12px;
+color: #e0e0e0;
+}
+
+.hero ul {
+margin-left: 20px;
+margin-bottom: 15px;
+}
+
+.hero ul li {
+list-style-type: disc;
+margin-bottom: 8px;
+line-height: 1.8;
+}
+
+.hero .titre {
+font-size: 22px;
+color: #b163c4;
+margin-top: 25px;
+margin-bottom: 12px;
+font-weight: bold;
 }
