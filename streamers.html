@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Streamers</title>
 <link rel="stylesheet" href="css/style.css">
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="assets/images/Synas_S.png">
 </head>
 
 <body>
@@ -16,19 +18,20 @@
 
 <section class="hero">
 <h1 id="couleur-streamer">Streamers</h1>
-<p>Nos créateurs</p>
+<h2>Nos créateurs</h2>
 </section>
 
 <section class="hero">
 <div>
     <p class="titre">Pour toutes demande pour devenir streamer, merci de remplir le formulaire sur notre discord</p>
+    <a href="https://discord.com/channels/1473335211684008230/1493589249621098647" target="_blank" rel="noopener noreferrer" class="btn">Ticket</a>
 </div>
 </section>
 
 <div id="streamers" class="cards"></div>
 
 <script>
-const streamers = ["sdukynow"];
+const streamers = ["sdukynow", "teels1337"];
 
 async function loadStreamers() {
     const container = document.getElementById("streamers");
@@ -45,7 +48,7 @@ async function loadStreamers() {
                 <div class="card">
                     <a href="https://twitch.tv/${name}" target="_blank">
                         <img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_${name}-300x200.jpg">
-                        <p>${name} 🔴 LIVE</p>
+                        <p class="btn-stream">Regarder ${name} </p>
                     </a>
                 </div>
             `;
