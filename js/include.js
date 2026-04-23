@@ -41,4 +41,13 @@ function setupDropdownMenu() {
     }
 }
 
+const slider = document.getElementById("slider");
+
+document.querySelector(".left").onclick = () => {
+    slider.scrollBy({ left: -300, behavior: "smooth" });
+};
+
+document.querySelector(".right").onclick = () => {
+    slider.scrollBy({ left: 300, behavior: "smooth" });
+};
 
