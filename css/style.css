@@ -4,30 +4,26 @@
    VARIABLES
    ============================ */
 :root {
-      --font-main: 'Poppins', Arial, sans-serif;
+  --font-main: 'Poppins', Arial, sans-serif;
   --font-title: 'Playfair Display', serif;
+
   --color-primary: #c47dd4;
   --color-primary-dark: #9b3fd4;
-  --color-bg: #2a1a3a;
   --color-surface: rgba(255, 255, 255, 0.10);
   --color-text: #f0e8ff;
   --color-text-muted: #d8c8f0;
   --color-footer-text: #c0a8d8;
 
-  --radius-sm: 4px;
   --radius-md: 6px;
   --radius-lg: 10px;
-  --radius-full: 50px;
 
-  --transition-fast: 0.2s ease;
   --transition-base: 0.3s ease;
 
-  --font-base: Arial, Helvetica, sans-serif;
   --header-h: 70px;
 }
 
 /* ============================
-   RESET & BASE
+   RESET
    ============================ */
 *, *::before, *::after {
   margin: 0;
@@ -39,41 +35,40 @@ html {
   scroll-behavior: smooth;
 }
 
-/* 🌌 BACKGROUND IMAGE FIXÉ */
-body {
-  background-image: url('../assets/images/Synas_Background.png');
-  background-size: cover;
-  background-position: bottom center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-
-  color: var(--color-text);
-  font-family: var(--font-main);
-  line-height: 1.6;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-
-  position: relative;
+/* ============================
+   LAYOUT GLOBAL (IMPORTANT FIX)
+   ============================ */
+html, body {
+  height: 100%;
 }
 
-/* 🌑 OVERLAY pour lisibilité */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  font-family: var(--font-main);
+  color: var(--color-text);
+  overflow-x: hidden;
+
+  background-image: url('../assets/images/Synas_Background.png');
+  background-size: cover;
+  background-position: center bottom;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* overlay lisibilité */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(2px);
   z-index: -1;
 }
 
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
 /* ============================
-   HEADER & NAVIGATION
+   HEADER
    ============================ */
 header {
   position: fixed;
@@ -81,91 +76,14 @@ header {
   width: 100%;
   height: var(--header-h);
   background: rgba(0, 0, 0, 0.92);
-  padding: 0 40px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(10px);
   z-index: 1000;
-  border-bottom: 1px solid rgba(177, 99, 196, 0.3);
+  border-bottom: 1px solid rgba(196, 125, 212, 0.2);
 }
 
-nav {
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Brand */
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-}
-
-.brand h2 {
-  font-size: 1.4rem;
-  color: var(--color-primary);
-  font-weight: 600;
-}
-
-.logo {
-  width: 48px;
-  height: 48px;
-}
-
-/* Nav */
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 28px;
-  align-items: center;
-}
-
-nav a {
-  color: var(--color-text);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: color var(--transition-base);
-}
-
-nav a:hover {
-  color: var(--color-primary);
-}
-
-/* ============================
-   DROPDOWN
-   ============================ */
-.dropdown {
-  position: relative;
-}
-
-.dropdown-toggle {
-  cursor: pointer;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: calc(100% + 8px);
-  right: 0;
-  display: none;
-  background: rgba(0, 0, 0, 0.97);
-  list-style: none;
-  padding: 8px 0;
-  min-width: 200px;
-  border-radius: var(--radius-md);
-  border: 1px solid rgba(177, 99, 196, 0.4);
-}
-
-.dropdown-menu li a {
-  display: block;
-  padding: 10px 18px;
-  color: var(--color-text-muted);
-}
-
-.dropdown.active .dropdown-menu {
-  display: block;
+/* IMPORTANT : espace pour header fixed */
+body {
+  padding-top: var(--header-h);
 }
 
 /* ============================
@@ -174,9 +92,15 @@ nav a:hover {
 .hero {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 120px 25px 80px;
-  text-align: left;
+
+  padding: 40px 25px;
+
   line-height: 1.8;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ⭐ centre horizontalement tout */
+  text-align: center;   /* ⭐ centre le texte */
 }
 
 /* TITRE PRINCIPAL */
@@ -184,37 +108,34 @@ nav a:hover {
   font-family: var(--font-title);
   font-size: 48px;
   text-align: center;
-  color: #c47dd4;
+  color: var(--color-primary);
   margin-bottom: 40px;
-  text-shadow: 0 0 20px rgba(196, 125, 212, 0.4);
 }
 
-/* TITRES SECTIONS */
+/* TITRES */
 .hero h2 {
   font-family: var(--font-title);
   font-size: 28px;
-  margin-top: 40px;
-  margin-bottom: 15px;
-  color: #c47dd4;
-  border-left: 4px solid #c47dd4;
-  padding-left: 12px;
+  margin: 40px 0 15px;
+  color: var(--color-primary);
+
+  border-left: none;
+  padding-left: 0;
+  text-align: center;
 }
 
-/* SOUS TITRES */
 .hero h3 {
   font-size: 20px;
   margin-top: 20px;
-  color: #d8c8f0;
+  color: var(--color-text-muted);
 }
 
-/* PARAGRAPHES */
 .hero p {
   font-size: 15.5px;
-  color: #d8c8f0;
+  color: var(--color-text-muted);
   margin-bottom: 12px;
 }
 
-/* LISTES */
 .hero ul {
   margin-left: 20px;
   margin-bottom: 15px;
@@ -222,16 +143,20 @@ nav a:hover {
 
 .hero ul li {
   margin-bottom: 8px;
-  font-size: 15px;
-  color: #e9ddff;
+}
+.hero a:not(.btn) {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 10px;
 }
 
-/* IMPORTANT / BOLD */
-.hero strong {
-  color: #ffffff;
+.hero a:not(.btn):hover {
+  color: var(--color-primary-dark);
 }
+
 /* ============================
-   CARDS / SLIDER
+   CARDS
    ============================ */
 .slider-container {
   position: relative;
@@ -254,11 +179,11 @@ nav a:hover {
   border-radius: var(--radius-lg);
   overflow: hidden;
   scroll-snap-align: start;
-  transition: transform var(--transition-base);
+  transition: transform 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-6px) scale(1.02);
+  transform: translateY(-6px);
 }
 
 .card img {
@@ -268,45 +193,148 @@ nav a:hover {
 }
 
 /* ============================
-   BUTTONS
+   BOUTONS (AMÉLIORÉ + CONTOUR)
    ============================ */
 .btn {
   display: inline-block;
   padding: 12px 28px;
-  background: var(--color-primary);
-  color: white;
+
+  background: transparent;
+  color: var(--color-primary);
+
+  border: 2px solid var(--color-primary);
   border-radius: var(--radius-md);
+
   text-decoration: none;
+  font-weight: 600;
+
+  transition: all var(--transition-base);
 }
 
 .btn:hover {
-  background: var(--color-primary-dark);
-}
-
-/* ============================
-   SCROLL BUTTONS
-   ============================ */
-.scroll-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   background: var(--color-primary);
-  border: none;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  cursor: pointer;
+  color: #fff;
+  transform: translateY(-2px);
 }
 
-.scroll-btn.left { left: 8px; }
-.scroll-btn.right { right: 8px; }
+/* option: bouton centré automatiquement dans hero */
+.hero .btn {
+  margin: 10px auto;
+}
 
 /* ============================
-   FOOTER
+   NAVBAR FIX
+   ============================ */
+
+nav {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand h2 {
+  color: var(--color-primary);
+  font-size: 1.3rem;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+nav a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--color-primary);
+}
+/* ============================
+   FOOTER (FIX COLLÉ BAS)
    ============================ */
 footer {
+  margin-top: auto;
   text-align: center;
   padding: 28px;
   background: rgba(0, 0, 0, 0.88);
   color: var(--color-footer-text);
+}
+
+/* ============================
+   BTN RETOUR (CENTRÉ)
+   ============================ */
+.btn-retour {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 40px auto;
+  gap: 15px;
+}
+
+.btn-retour ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* ============================
+   DROPDOWN FIX
+   ============================ */
+.dropdown {
+  position: relative;
+}
+
+/* menu caché par défaut */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+
+  display: none;
+  flex-direction: column;
+
+  background: rgba(0, 0, 0, 0.97);
+  border: 1px solid rgba(196, 125, 212, 0.4);
+  border-radius: var(--radius-md);
+
+  min-width: 200px;
+  padding: 8px 0;
+  z-index: 2000;
+}
+
+/* affichage quand actif */
+.dropdown.active .dropdown-menu {
+  display: flex;
+}
+
+/* items */
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 16px;
+  color: var(--color-text-muted);
+  transition: 0.2s;
+}
+
+.dropdown-menu li a:hover {
+  background: rgba(196, 125, 212, 0.15);
+  color: var(--color-primary);
 }

@@ -2,52 +2,66 @@ document.addEventListener("DOMContentLoaded", () => {
     // Include HTML components
     document.querySelectorAll("[data-include]").forEach(async (el) => {
         const file = el.getAttribute("data-include");
+
         const res = await fetch(file);
         const html = await res.text();
         el.innerHTML = html;
-        
-        // Setup dropdown after navbar is included
-        if (file.includes("navbar")) {
-            setupDropdownMenu();
-        }
-    });
-});
 
-// Dropdown menu functionality
-function setupDropdownMenu() {
-    const dropdown = document.querySelector(".dropdown");
-    const dropdownToggle = document.querySelector(".dropdown-toggle");
-    
-    if (dropdownToggle && dropdown) {
-        dropdownToggle.addEventListener("click", (e) => {
-            e.preventDefault();
-            dropdown.classList.toggle("active");
-        });
-        
-        // Close dropdown when clicking outside
-        document.addEventListener("click", (e) => {
-            if (!dropdown.contains(e.target)) {
-                dropdown.classList.remove("active");
+        // important : attendre DOM injecté
+        requestAnimationFrame(() => {
+            if (file.includes("navbar")) {
+                setupDropdownMenu();
             }
         });
-        
-        // Close dropdown when a link is clicked
-        const dropdownLinks = document.querySelectorAll(".dropdown-menu a");
-        dropdownLinks.forEach(link => {
-            link.addEventListener("click", () => {
-                dropdown.classList.remove("active");
-            });
+    });
+
+    setupSlider(); // safe init
+});
+
+
+// ============================
+// DROPDOWN
+// ============================
+function setupDropdownMenu() {
+    const dropdowns = document.querySelectorAll(".dropdown");
+
+    dropdowns.forEach((dropdown) => {
+        const toggle = dropdown.querySelector(".dropdown-toggle");
+
+        if (!toggle) return;
+
+        toggle.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            // toggle uniquement ce dropdown
+            dropdown.classList.toggle("active");
         });
-    }
+    });
+
+    // clic extérieur → ferme tout
+    document.addEventListener("click", () => {
+        document.querySelectorAll(".dropdown.active")
+            .forEach(d => d.classList.remove("active"));
+    });
 }
 
-const slider = document.getElementById("slider");
 
-document.querySelector(".left").onclick = () => {
-    slider.scrollBy({ left: -300, behavior: "smooth" });
-};
+// ============================
+// SLIDER SAFE
+// ============================
+function setupSlider() {
+    const slider = document.getElementById("slider");
+    const leftBtn = document.querySelector(".left");
+    const rightBtn = document.querySelector(".right");
 
-document.querySelector(".right").onclick = () => {
-    slider.scrollBy({ left: 300, behavior: "smooth" });
-};
+    if (!slider || !leftBtn || !rightBtn) return;
 
+    leftBtn.addEventListener("click", () => {
+        slider.scrollBy({ left: -300, behavior: "smooth" });
+    });
+
+    rightBtn.addEventListener("click", () => {
+        slider.scrollBy({ left: 300, behavior: "smooth" });
+    });
+}
