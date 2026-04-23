@@ -350,3 +350,28 @@ footer {
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.03);
 }
+
+/* ============================
+   BOUTONS stream
+   ============================ */
+.btn-stream {
+  display: center;
+  padding: 12px 28px;
+
+  background: transparent;
+  color: var(--color-primary);
+
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-md);
+
+  text-decoration: none;
+  font-weight: 600;
+
+  transition: all var(--transition-base);
+}
+
+.btn-stream:hover {
+  background: var(--color-primary);
+  color: #fff;
+  transform: translateY(-2px);
+}
