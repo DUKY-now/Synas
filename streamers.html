@@ -23,8 +23,53 @@
 </div>
 </section>
 
+<!-- pour afficher uniquement les streamers en live-->
+<div id="streamers" class="cards"></div>
+<!--Liste des streamers à afficher sur la page. Seuls les streamers en live seront affichés. -->
+<script>
+// mettre dans la site chaque streamer qui sont affiliés
+const streamers = [
+    "sdukynow",
+];
 
-<iframe
+async function loadStreamers() {
+
+    const container = document.getElementById("streamers");
+    container.innerHTML = "";
+
+    for (const name of streamers) {
+
+        try {
+            const res = await fetch(`https://decapi.me/twitch/uptime/${name}`);
+            const text = await res.text();
+
+            // Si offline → skip
+            if (text.includes("offline")) continue;
+
+            container.innerHTML += `
+                <div class="card">
+                    <a href="https://twitch.tv/${name}" target="_blank">
+                        <img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_${name}-300x200.jpg">
+                        <p>${name} 🔴 LIVE</p>
+                    </a>
+                </div>
+            `;
+
+        } catch (err) {
+            console.log(err);
+        }
+    }
+}
+
+loadStreamers();
+setInterval(loadStreamers, 60000);
+
+</script>
+
+
+
+<!-- affiche tout les streamers qu'on souhaite qu'ils soient en live ou non. -->
+<!-- <iframe
     src="https://player.twitch.tv/?channel=mrquoty&parent=127.0.0.1"  
     height="480"
     width="100%"
@@ -37,9 +82,11 @@
     width="100%"
     allowfullscreen>
 </iframe>
-<!-- modifier le localhost par le nom de domaine -->
+modifier le localhost par le nom de domaine -->
 
 </body>
+
+
 
 <footer data-include="components/footer.html"></footer>
 </html>

@@ -68,7 +68,8 @@ user-select: none;
 display: none;
 position: absolute;
 top: 100%;
-left: 0;
+right: 0;
+left: auto;
 background: rgba(0, 0, 0, 0.95);
 list-style: none;
 padding: 10px 0;
@@ -264,3 +265,7 @@ margin-top: 25px;
 margin-bottom: 12px;
 font-weight: bold;
 }
+
+.btn {
+align: center;
+}   
