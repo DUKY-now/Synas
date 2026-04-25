@@ -1,0 +1,32 @@
+Rajouter sur la page géographie la carte du serveur avec les lieux qui ont un importance dans le lore du serveur
+
+
+Structure du dossier Lore :
+/lore
+│
+├── index.html                → Vue globale + résumé
+│
+├── histoire.html            → Origines + communautés
+├── hargrove.html            → Hal + système
+├── foundation.html          → Opération principale
+├── meridian.html            → Blanchiment + twist
+│
+├── personnages/
+│   ├── index.html           → Présentation générale
+│   ├── edward.html
+│   ├── victoria.html
+│   └── preston.html
+│
+├── groupes/
+│   ├── index.html
+│   ├── nsk.html
+│   ├── carnales.html
+│   └── freeborn.html
+│
+├── institutions.html        → Police / justice
+├── geographie.html          → Zones RP
+│
+├── chronologie.html         → Timeline datée
+├── actuel.html              → Événements en cours
+│
+└── mysteres.html            → Chiliad / Reeves / secrets
