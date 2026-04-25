@@ -11,13 +11,119 @@
 </head>
 
 <body>
+    <script src="/js/include.js"></script>
 <header data-include="/components/navbar.html"></header>
-<script src="/js/include.js"></script>
+
 
 <section class="hero">
-<h1>🚧 En Développement 🚧</h1>
-<a href="../lore.html" class="btn">Faire demi tour</a>
+<h1>Section | Personnages</h1>
+<a href="../lore.html" class="btn">Retourner au Lore</a>
 </section>
+
+
+<section>
+<div class="scanline"></div>
+<div class="container">
+            <!-- FILTERS -->
+            <div class="filters">
+                <h2>Choisir un Dossier</h2>
+<button onclick="filterCategory('LSPD')">> LSPD</button>
+<button onclick="filterCategory('BCSO')">> BCSO</button>
+<button onclick="filterCategory('BureauProc')">> Bureau du Procureur</button>
+<button onclick="filterCategory('PolitiqueLocale')">> Politique Locale</button>
+<button onclick="filterCategory('all')">> TOUT</button>
+            </div>
+            <!-- PANEL -->
+            <div class="panel">
+                <div class="card LSPD">
+                    <h2>Insitution | LSPD</h2>
+                        <p>Le LSPD n'est pas corrompu au sens classique. Il est fragmenté — ce qui est plus dangereux. De bons
+                        flics, de mauvais flics, et une institution dont la structure récompense systématiquement les seconds. Ce
+                        n'est pas une conspiration. C'est un biais institutionnel si profondément enraciné qu'il s'auto-reproduit sans
+                        avoir besoin d'être activement entretenu.</p>
+                    <br>
+                    <p><strong>◆ Commissaire Alan Broward · 63 ans</strong></p>
+                        <p>35 ans de carrière. L'homme le plus difficile à catégoriser de tout San Andreas. N'est pas dans la poche de Hargrove
+                        — Edward l'a essayé une fois et s'est fait reconduire poliment à la sortie. Mais Broward a ses propres codes, ses
+                        propres loyautés, ses propres zones d'ombre. Il couvre certaines choses — pas pour de l'argent, mais pour « maintenir
+                        l'ordre » selon sa définition personnelle. Il croit sincèrement en une version de San Andreas qui n'existe peut-être plus
+                        depuis longtemps.</p>
+                    <br>
+                    <p><strong>◆ Division Sud</strong></p>
+                        <p>Quartiers populaires de Los Santos. Militarisée, sous pression de résultats numériques. Agents soit idéologiquement
+                        alignés sur une vision dure de l'ordre public, soit épuisés et cyniques jusqu'à l'os. Les bavures ne sont pas une
+                        politique explicite — elles sont le symptôme d'une institution sans boussole morale, soumise à des objectifs
+                        quantitatifs dans des quartiers où chaque résident la voit comme une force d'occupation.
+                    </p>
+
+                    <br>
+                    <p><strong>chaque résident la voit comme une force d'occupation.</strong></p>
+                        <p>La plus compétente du LSPD. La plus frustrée. Plusieurs enquêteurs ont ouvert des dossiers sur des sociétés liées à
+                        Hargrove Capital. Chaque dossier a été fermé pour « manque de preuves » ou « réorientation des priorités ». Deux
+                        enquêteurs ont demandé une mutation. L'un a reçu une promotion inattendue. L'autre a eu une relation extraconjugale
+                        photographiée par un inconnu. Il est désormais « coopératif ».
+                    </p>
+                </div> 
+            
+                <div class="card BCSO">
+                    <h2>Insitution | BCSO</h2>
+                        <p  >Structurellement différent du LSPD. Plus petit, plus rural, plus pragmatique — au sens le moins flatteur duterme.</p>
+                    <br>
+                    <p><strong>◆ Sheriff Dale Weston · 58 ans</strong></p>
+                        <p>Élu trois fois. A compris que son maintien au pouvoir dépend de sa capacité à ne pas voir certaines choses dans les
+                        zones rurales. Les Sandy Reapers ne paient pas en liquide — trop risqué, trop traçable. Ils paient en services :
+                        informations sur les étrangers qui circulent dans le comté, disparition de dossiers, regard dans l'autre direction lors de
+                        certaines livraisons. Weston n'est pas un monstre. Il est convaincu d'être pragmatique. C'est peut-être pire.</p>
+                </div>  
+
+                <div class="card BureauProc">
+                    <h2>Insitution | Bureau du Procureur</h2>
+                    <p><strong>◆ Rachel Kim · 44 ans · Procureure du District</strong></p>
+                        <p>Ambitieuse, brillante, idéaliste à l'origine. A pris le poste en se promettant de « vraiment changer les choses ». Elle
+                        commence à comprendre que chaque dossier qu'elle ouvre crée des résistances qu'elle ne comprend pas toujours —
+                        des pressions qui ne ressemblent pas à de la corruption ordinaire, mais à quelque chose de plus diffus, de plus
+                        systémique.
+                    <br>
+                        Elle n'a pas encore compris le mécanisme Hargrove. Mais elle a commencé à noter des patterns dans les dossiers
+                        classés sans suite. Elle a commencé à dessiner un organigramme sur un tableau blanc dans son bureau. Elle ne sait pas
+                        encore ce qu'elle dessine. Elle commence à avoir peur de le découvrir.</p>
+                </div>  
+
+                <div class="card PolitiqueLocale">
+                    <h2>Insitution | Politique Locale</h2>
+                        <p>Le conseiller <strong>Darnell Brooks</strong> représente Chamberlain Hills. Sincère, engagé, fatigué. A donné son accord au
+                        programme Hargrove pour Davis en échange de la rénovation d'une école. Il ne sait pas ce qu'il a signé. Son avocat
+                        non plus.
+                    <br>
+                        Le sénateur <strong>Robert Nash</strong> — mari de Victoria Hargrove. Républicain modéré qui avait l'ambition et pas les moyens.
+                        Maintient les apparences en public. Sait que son poste dépend de Victoria. Lui fournit en retour une protection légale
+                        qu'aucun avocat ne peut remplacer</p>
+            </div>  
+            </div>
+
+            
+</div>
+</section>
+
+
+<script>
+function filterCategory(cat) {
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+        if (cat === 'all') {
+            card.style.display = 'block';
+        } else {
+            if (card.classList.contains(cat)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        }
+    });
+}
+</script>
+
 
 <footer data-include="/components/footer.html"></footer>
 </body>
