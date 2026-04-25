@@ -15,10 +15,87 @@
 <script src="/js/include.js"></script>
 
 <section class="hero">
-<h1>🚧 En Développement 🚧</h1>
-<a href="../lore.html" class="btn">Faire demi tour</a>
+<h1>Section | Personnages</h1>
+<a href="../lore.html" class="btn">Retourner au Lore</a>
 </section>
 
+<div class="scanline"></div>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h1>SYNAS // ACCESS NODE</h1>
+
+        <div class="menu">
+            <button>> HARGROVE CAPITAL</button>
+            <button>> FORCES DE L’ORDRE</button>
+            <button>> ORGANISATIONS</button>
+            <button>> BLAINE COUNTY</button>
+        </div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+        <div class="topbar">
+            SYSTEM STATUS: ONLINE // CLASSIFICATION LEVEL: 3
+        </div>
+
+        <div class="content">
+
+            <!-- FILTERS -->
+            <div class="filters">
+                <h2>FILTER MODULE</h2>
+<button onclick="filterCategory('hargrove')">> HARGROVE CAPITAL</button>
+<button onclick="filterCategory('police')">> FORCES DE L’ORDRE</button>
+<button onclick="filterCategory('gang')">> ORGANISATIONS</button>
+<button onclick="filterCategory('all')">> TOUT</button>
+            </div>
+
+            <!-- PANEL -->
+            <div class="panel">
+<div class="card hargrove">
+                    <h3>Famille Hargrove</h3>
+                    <p>DATA UNAVAILABLE</p>
+                </div>
+
+                <div class="card police">
+                    <h3>Service Public</h3>
+                    <p>DATA UNAVAILABLE</p>
+                </div>
+
+                <div class="card gang">
+                    <h3>Menace</h3>
+                    <p>DATA UNAVAILABLE</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</section>
+
+
+<script>
+function filterCategory(cat) {
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+        if (cat === 'all') {
+            card.style.display = 'block';
+        } else {
+            if (card.classList.contains(cat)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        }
+    });
+}
+</script>
 <footer data-include="/components/footer.html"></footer>
 </body>
 </html>
