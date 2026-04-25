@@ -1,3 +1,8 @@
+function resetUI() {
+    document.querySelectorAll(".dropdown.active")
+        .forEach(el => el.classList.remove("active"));
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     // Include HTML components
     document.querySelectorAll("[data-include]").forEach(async (el) => {

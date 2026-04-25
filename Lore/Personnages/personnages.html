@@ -11,71 +11,134 @@
 </head>
 
 <body>
+    <script src="/js/include.js"></script>
 <header data-include="/components/navbar.html"></header>
-<script src="/js/include.js"></script>
+
 
 <section class="hero">
 <h1>Section | Personnages</h1>
 <a href="../lore.html" class="btn">Retourner au Lore</a>
 </section>
 
+
+<section>
 <div class="scanline"></div>
-
 <div class="container">
-
-    <!-- SIDEBAR -->
-    <div class="sidebar">
-        <h1>SYNAS // ACCESS NODE</h1>
-
-        <div class="menu">
-            <button>> HARGROVE CAPITAL</button>
-            <button>> FORCES DE L’ORDRE</button>
-            <button>> ORGANISATIONS</button>
-            <button>> BLAINE COUNTY</button>
-        </div>
-    </div>
-
-    <!-- MAIN -->
-    <div class="main">
-
-        <div class="topbar">
-            SYSTEM STATUS: ONLINE // CLASSIFICATION LEVEL: 3
-        </div>
-
-        <div class="content">
-
             <!-- FILTERS -->
             <div class="filters">
-                <h2>FILTER MODULE</h2>
+                <h2>Choisir un Dossier</h2>
 <button onclick="filterCategory('hargrove')">> HARGROVE CAPITAL</button>
 <button onclick="filterCategory('police')">> FORCES DE L’ORDRE</button>
 <button onclick="filterCategory('gang')">> ORGANISATIONS</button>
+<button onclick="filterCategory('disparu')">> DISPARU</button>
 <button onclick="filterCategory('all')">> TOUT</button>
-            </div>
 
+            </div>
             <!-- PANEL -->
             <div class="panel">
-<div class="card hargrove">
-                    <h3>Famille Hargrove</h3>
-                    <p>DATA UNAVAILABLE</p>
+                <div class="card hargrove">
+                    <h2>Famille Hargrove</h2>
+                    <h3>Edward Hargrove Jr.</h3>
+                                        <h2>Profil</h2>
+<p>Juriste de formation, Yale 1988. A passé sa vie à être le fils raisonnable — celui qui maintenait les façades pendant
+que son père construisait l'empire. Connaît les grandes lignes, pas les détails. Cette ignorance partielle le rend
+dangereux : il prend des décisions majeures sans en comprendre les mécanismes. Extérieurement : PDG respecté,
+marié, deux enfants à l'université, conseils d'administration culturels, interviews sur le « capitalisme conscient ».
+Intérieurement : paralysé par la peur, incapable de trancher les conflits familiaux, convaincu que sa sœur orchestre sa
+destruction depuis des années. Dort peu. Boit plus qu'il ne le reconnaît.</p>
+                </div>
+
+
+                <div class="card hargrove">
+                    <h2>Famille Hargrove</h2>
+                    <h3>Victoria Hargrove-Nash</h3>
+                    <h2>Profil</h2>
+<p>La seule des trois à avoir compris ce que son père construisait — et à vouloir l'achever. Là où Hal voulait posséder
+San Andreas discrètement, Victoria veut le faire savoir. Pas publiquement. Mais dans les cercles qui comptent : les
+juristes qui rédigent les lois, les banquiers qui structurent les dettes, les juges qui interprètent les textes. Mariée au
+sénateur Robert Nash dans une alliance stratégique mutuellement comprise. Ils n'ont pas dîné seuls depuis 2019.
+</p>
+                </div>
+
+                <div class="card hargrove">
+                    <h2>Famille Hargrove</h2>
+                    <h3>Preston Hargrove</h3>
+                                        <h2>Profil</h2>
+<p>Officiellement : directeur des relations communautaires de Hargrove Capital — un poste créé pour lui par Edward,
+qui ne signifie rien, conçu pour le garder occupé et éloigné des vrais dossiers. Réellement : un homme qui s'est noyé
+dans la cocaïne et dans le sentiment d'être le seul à voir la vérité sur sa famille. Le seul des trois à avoir réellement
+passé du temps dans les quartiers — pas par idéologie, par addiction. Imprévisible, autodestructeur, et
+paradoxalement le personnage le plus honnête de la famille.</p>
+                </div>
+                    
+                <div class="card police">
+                    <h2>Service Public</h2>
+                    <h3>Commissaire Alan Broward</h3>
+                                        <h2>Profil</h2>
+<p>35 ans de carrière. L'homme le plus difficile à catégoriser de tout San Andreas. N'est pas dans la poche de Hargrove
+— Edward l'a essayé une fois et s'est fait reconduire poliment à la sortie. Mais Broward a ses propres codes, ses
+propres loyautés, ses propres zones d'ombre. Couvre certaines choses pour « maintenir l'ordre » selon sa définition
+personnelle. Croit en une version de San Andreas qui n'existe peut-être plus.
+</p>
                 </div>
 
                 <div class="card police">
-                    <h3>Service Public</h3>
-                    <p>DATA UNAVAILABLE</p>
+                    <h2>Service Public</h2>
+                    <h3>Sheriff Dale Weston</h3>
+                                        <h2>Profil</h2>
+<p>Élu trois fois. Maintien au pouvoir conditionné à sa capacité à ne pas voir certaines choses. Paiement en services, pas
+en cash. N'est pas un monstre — convaincu d'être pragmatique. C'est peut-être pire.
+</p>
+                </div>
+
+                <div class="card police">
+                    <h2>Service Public</h2>
+                    <h3>Rachel Kim</h3>
+                                        <h2>Profil</h2>
+<p>Ambitieuse, brillante, idéaliste à l'origine. A pris le poste en se promettant de « vraiment changer les choses ».
+Commence à comprendre que chaque dossier qu'elle ouvre crée des résistances qu'elle ne comprend pas — des
+pressions plus diffuses que la corruption ordinaire.</p>
+                </div>
+
+
+                <div class="card police">
+                    <h2>Service Public</h2>
+                    <h3>Darnell Brooks</h3>
+                                        <h2>Profil</h2>
+<p>Élu local sincère. Engagé, fatigué. A donné son accord au programme Hargrove pour Davis en échange de la
+rénovation d'une école de son district. Ne sait pas ce qu'il a signé. Son avocat non plus.</p>
+                </div>
+
+
+
+                <div class="card gang">
+                    <h2>Menace</h2>
+                    <h3>El Viejo</h3>
+                                        <h2>Profil</h2>
+<p>Réputation irréprochable dans les cercles des Carnales : calme, juste, stratège. A grandi dans Rancho. A survécu à
+trois guerres internes et à deux tentatives d'assassinat. Considère qu'il dirige une famille élargie, pas un gang. Tient un
+commerce de façade dans Rancho — une carrosserie ouverte depuis 28 ans.
+</p>
                 </div>
 
                 <div class="card gang">
-                    <h3>Menace</h3>
-                    <p>DATA UNAVAILABLE</p>
+                    <h2>Menace</h2>
+                    <h3>Dirtbag decker</h3>
+                    <h2>Profil</h2>
+<p>Vétéran de deux conflits. Ancien du Lost MC. Le personnage le plus imprévisible de tout l'écosystème criminel de
+San Andreas. Pas parce qu'il est fou — parce qu'il est logique selon un code que personne d'autre ne partage. Survit
+dans le désert depuis vingt ans dans des conditions que personne d'autre ne supporterait.</p>
                 </div>
+
+                <div class="card disparu">
+                    <h2>Disparu</h2>
+                    <h3>Thomas Reeves</h3>
+                    <h2>Profil</h2>
+<p>Analyste senior chez Meridian. L'une des trois personnes vivantes à connaître une partie significative du mécanisme
+de blanchiment. « En déplacement professionnel » selon son employeur. Sa petite amie a signalé sa disparition. Le
+dossier a été ouvert puis transféré. Transféré où ? Elle n'a pas pu l'obtenir.</p>
+
             </div>
-
-        </div>
-    </div>
-
-</div>
-
 </section>
 
 
@@ -96,6 +159,8 @@ function filterCategory(cat) {
     });
 }
 </script>
+
+
 <footer data-include="/components/footer.html"></footer>
 </body>
 </html>

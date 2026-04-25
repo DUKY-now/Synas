@@ -173,17 +173,22 @@ body {
 }
 
 .card {
-  flex: 0 0 auto;
-  width: 300px;
-  background: var(--color-surface);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  scroll-snap-align: start;
-  transition: transform 0.3s ease;
+  width: 260px;
+
+  padding: 18px;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(196, 125, 212, 0.2);
+  border-radius: 12px;
+
+  backdrop-filter: blur(8px);
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
+  box-shadow: 0 0 18px rgba(196, 125, 212, 0.2);
 }
 
 .card img {
@@ -327,7 +332,9 @@ footer {
   text-align: center;
   padding: 28px;
   background: rgba(0, 0, 0, 0.88);
-  color: var(--color-footer-text);
+  color: var(--color-footer-text); 
+  width: 100%;
+  display: block;
 }
 
 /* ============================
@@ -427,3 +434,65 @@ footer {
   color: #fff;
   transform: translateY(-2px);
 }
+
+/* ============================
+   CONTAINER GLOBAL (CENTRAGE UI DOSSIER)
+   ============================ */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+
+  display: flex;
+  gap: 30px;
+
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 20px;
+}
+
+.filters {
+  width: 260px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(196, 125, 212, 0.25);
+  border-radius: 10px;
+
+  padding: 18px;
+}
+.filters button {
+  background: transparent;
+  border: 1px solid rgba(196, 125, 212, 0.35);
+  color: var(--color-text);
+
+  padding: 10px 12px;
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  transition: all 0.2s ease;
+}
+
+.filters button:hover {
+  background: rgba(196, 125, 212, 0.15);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateX(4px);
+}
+
+.panel {
+  flex: 1;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  justify-content: center;
+}
+
