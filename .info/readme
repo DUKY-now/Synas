@@ -57,3 +57,12 @@ Base pour une page
 
 </body>
 </html>
+
+Commande pour merge dev vers main:
+git checkout main
+git pull origin main
+git merge dev
+git push origin main
+
+et pour déployer sur cloudflare pages:
+npx wrangler pages deploy .
