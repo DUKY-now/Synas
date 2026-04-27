@@ -542,3 +542,53 @@ footer {
 .info-bar:hover .info-track {
     animation-play-state: paused;
 }
+
+.onboarding {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.onb-title {
+    font-size: 42px;
+    color: var(--color-primary);
+}
+
+.onb-subtitle {
+    color: var(--color-text-muted);
+    margin-bottom: 40px;
+}
+
+.onb-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.onb-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(196, 125, 212, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+    backdrop-filter: blur(10px);
+    transition: 0.25s;
+}
+
+.onb-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(196, 125, 212, 0.15);
+}
+
+.onb-card.highlight {
+    border: 1px solid var(--color-primary);
+}
+
+.onb-footer {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
